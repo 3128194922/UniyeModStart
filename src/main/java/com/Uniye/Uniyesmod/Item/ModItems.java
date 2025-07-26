@@ -2,6 +2,7 @@ package com.Uniye.Uniyesmod.Item;
 
 import com.Uniye.Uniyesmod.Uniyesmod;
 import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.ArrowItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -36,6 +37,11 @@ public class ModItems {
             "democracy_boots",
             () -> new ArmorItem(ModArmorMaterials.DEMOCRACY, ArmorItem.Type.BOOTS, new Item.Properties())
     );
+    public static final RegistryObject<Item> SEEKING_ARROW = ITEMS.register(
+            "seeking_arrow",
+            () -> new SeekingArrowItem(new Item.Properties())
+    );
+
 
     public static void register(IEventBus bus)
     {

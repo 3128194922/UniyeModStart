@@ -16,4 +16,11 @@ public class ModEntities {
                     .updateInterval(20)
                     .build("slime_arrow")
     );
+    public static final RegistryObject<EntityType<SeekingArrowEntity>> SEEKING_ARROW = ENTITIES.register("seeking_arrow",
+            () -> EntityType.Builder.<SeekingArrowEntity>of(SeekingArrowEntity::new, MobCategory.MISC)
+                    .sized(0.5F, 0.5F)
+                    .clientTrackingRange(4)
+                    .updateInterval(20)
+                    .build("seeking_arrow")
+    );
 }
