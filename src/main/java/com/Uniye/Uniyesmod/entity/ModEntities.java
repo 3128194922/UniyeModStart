@@ -23,4 +23,26 @@ public class ModEntities {
                     .updateInterval(20)
                     .build("seeking_arrow")
     );
+    public static final RegistryObject<EntityType<AirburstArrowEntity>> AIRBURST_ARROW = ENTITIES.register("airburst_arrow",
+            () -> EntityType.Builder.<AirburstArrowEntity>of(AirburstArrowEntity::new, MobCategory.MISC)
+                    .sized(0.5F, 0.5F)
+                    .clientTrackingRange(4)
+                    .updateInterval(20)
+                    .build("airburst_arrow")
+    );
+    public static final RegistryObject<EntityType<ExplodingArrowEntity>> EXPLODING_ARROW = ENTITIES.register("exploding_arrow",
+            () -> EntityType.Builder.<ExplodingArrowEntity>of(ExplodingArrowEntity::new, MobCategory.MISC)
+                    .sized(0.5F, 0.5F)
+                    .clientTrackingRange(4)
+                    .updateInterval(20)
+                    .build("exploding_arrow")
+    );
+    public static final RegistryObject<EntityType<FinalExplodingArrowEntity>> FINAL_EXPLODING_ARROW = ENTITIES.register("final_exploding_arrow",
+            () -> EntityType.Builder.<FinalExplodingArrowEntity>of(FinalExplodingArrowEntity::new, MobCategory.MISC)
+                    .sized(0.5f, 0.5f)
+                    .clientTrackingRange(4)
+                    .updateInterval(20)
+                    .build("final_exploding_arrow")
+    );
+
 }

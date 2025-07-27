@@ -2,7 +2,6 @@ package com.Uniye.Uniyesmod.Item;
 
 import com.Uniye.Uniyesmod.Uniyesmod;
 import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.ArrowItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -41,7 +40,18 @@ public class ModItems {
             "seeking_arrow",
             () -> new SeekingArrowItem(new Item.Properties())
     );
-
+    public static final RegistryObject<Item> AIRBURST_ARROW = ITEMS.register(
+            "airburst_arrow",
+            () -> new AirburstArrowItem(new Item.Properties())
+    );
+    public static final RegistryObject<Item> EXPLODING_ARROW = ITEMS.register(
+            "exploding_arrow",
+            () -> new ExplodingArrowItem(new Item.Properties())
+    );
+    public static final RegistryObject<Item> FINAL_EXPLODING_ARROW = ITEMS.register(
+            "final_exploding_arrow",
+            () -> new FinalExplodingArrowItem(new Item.Properties())
+    );
 
     public static void register(IEventBus bus)
     {

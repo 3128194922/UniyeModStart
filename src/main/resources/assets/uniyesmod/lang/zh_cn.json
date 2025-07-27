@@ -4,5 +4,11 @@
  "item.uniyesmod.slime_arrow": "史莱姆TNT箭",
  "entity.uniyesmod.slime_arrow": "史莱姆TNT箭",
  "item.uniyesmod.seeking_arrow": "追踪箭",
- "entity.uniyesmod.seeking_arrow": "追踪箭"
+ "entity.uniyesmod.seeking_arrow": "追踪箭",
+ "item.uniyesmod.airburst_arrow": "空爆箭",
+ "entity.uniyesmod.airburst_arrow": "空爆箭",
+ "item.uniyesmod.exploding_arrow": "空爆I",
+ "entity.uniyesmod.exploding_arrow": "空爆I",
+ "item.uniyesmod.final_exploding_arrow": "空爆II",
+ "entity.uniyesmod.final_exploding_arrow": "空爆II"
 }
