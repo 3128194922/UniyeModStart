@@ -10,5 +10,9 @@
  "item.uniyesmod.exploding_arrow": "空爆I",
  "entity.uniyesmod.exploding_arrow": "空爆I",
  "item.uniyesmod.final_exploding_arrow": "空爆II",
- "entity.uniyesmod.final_exploding_arrow": "空爆II"
+ "entity.uniyesmod.final_exploding_arrow": "空爆II",
+ "item.uniyesmod.democracy_leggings": "Helldiver leggings",
+ "item.uniyesmod.democracy_chestplate": "Helldiver chestplate",
+ "item.uniyesmod.democracy_boots": "Helldiver boots",
+ "item.uniyesmod.democracy_helmet": "Helldiver helmet"
 }

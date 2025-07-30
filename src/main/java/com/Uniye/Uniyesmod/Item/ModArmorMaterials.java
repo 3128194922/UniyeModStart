@@ -10,7 +10,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import java.util.function.Supplier;
 
 public enum ModArmorMaterials implements ArmorMaterial {
-    DEMOCRACY("democracy",26,new int[] {5,7,5,4},25, SoundEvents.ARMOR_EQUIP_IRON,1f,0f,()->Ingredient.of(ModItems.RUBBER.get()));
+    DEMOCRACY("democracy",26,new int[] {6,11,9,6},25, SoundEvents.ARMOR_EQUIP_NETHERITE,4f,0f,()->Ingredient.of(ModItems.RUBBER.get()));
 
     private final String name;
     private final int durabilityMultiplier;
