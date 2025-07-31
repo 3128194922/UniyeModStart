@@ -52,6 +52,10 @@ public class ModItems {
             "final_exploding_arrow",
             () -> new FinalExplodingArrowItem(new Item.Properties())
     );
+    public static final RegistryObject<Item> WHICH_ARMOR_HELMET = ITEMS.register(
+            "which_armor_helmet",
+            () -> new WhichArmorItem(ModArmorMaterials.WHICH, ArmorItem.Type.HELMET, new Item.Properties())
+    );
 
     public static void register(IEventBus bus)
     {

@@ -1,5 +1,6 @@
-package com.Uniye.Uniyesmod.Item;
+package com.Uniye.Uniyesmod.tabs;
 
+import com.Uniye.Uniyesmod.Item.ModItems;
 import com.Uniye.Uniyesmod.Uniyesmod;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -29,6 +30,7 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.AIRBURST_ARROW.get());
                         output.accept(ModItems.EXPLODING_ARROW.get());
                         output.accept(ModItems.FINAL_EXPLODING_ARROW.get());
+                        output.accept(ModItems.WHICH_ARMOR_HELMET.get());
                     })
                     .build()
     );

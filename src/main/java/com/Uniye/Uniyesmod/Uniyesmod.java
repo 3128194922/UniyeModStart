@@ -1,10 +1,9 @@
 package com.Uniye.Uniyesmod;
 
-import com.Uniye.Uniyesmod.Item.ModCreativeModTabs;
+import com.Uniye.Uniyesmod.tabs.ModCreativeModTabs;
 import com.Uniye.Uniyesmod.Item.ModItems;
 import com.Uniye.Uniyesmod.entity.ModEntities;
 import com.mojang.logging.LogUtils;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
