@@ -1,8 +1,10 @@
 package com.Uniye.Uniyesmod.Item;
 
 import com.Uniye.Uniyesmod.Uniyesmod;
+import com.Uniye.Uniyesmod.Utils.TagInit;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Tiers;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -56,7 +58,10 @@ public class ModItems {
             "which_armor_helmet",
             () -> new WhichArmorItem(ModArmorMaterials.WHICH, ArmorItem.Type.HELMET, new Item.Properties())
     );
-
+    public static final RegistryObject<Item> MASTER_KEY = ITEMS.register(
+            "master_key",
+            () -> new MasterKeyItem(5, -3.0f,Tiers.NETHERITE, TagInit.MASTERKEY_TAG, new Item.Properties())
+    );
     public static void register(IEventBus bus)
     {
         ITEMS.register(bus);

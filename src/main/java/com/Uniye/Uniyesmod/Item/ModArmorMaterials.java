@@ -7,6 +7,7 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
 
+import java.util.UUID;
 import java.util.function.Supplier;
 
 public enum ModArmorMaterials implements ArmorMaterial {
