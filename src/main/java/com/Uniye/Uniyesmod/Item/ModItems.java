@@ -66,4 +66,7 @@ public class ModItems {
     {
         ITEMS.register(bus);
     }
+    public static final RegistryObject<Item> GRIEFER_SPEAR = ITEMS.register(
+            "griefer_spear",
+            () -> new GrieferSpearItem(Tiers.IRON, 4.0F, -2.8F, new Item.Properties()));
 }

@@ -120,14 +120,11 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
-    // Put repositories for dependencies here
-    // ForgeGradle automatically adds the Forge maven and Maven Central for you
-
-    // If you have mod jar dependencies in ./libs, you can declare them as a repository like so.
-    // See https://docs.gradle.org/current/userguide/declaring_repositories.html#sub:flat_dir_resolver
-    // flatDir {
-    //     dir 'libs'
-    // }
+    maven { url "https://maven.jaackson.me" }
+    maven { url "https://maven.teamabnormals.com" }
+    maven { url "https://dvs1.progwml6.com/files/maven/" }
+    maven { url "https://modmaven.k-4u.nl" }
+    maven { url "https://www.cursemaven.com" }
     maven {
         name = 'GeckoLib'
         url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
@@ -136,31 +133,36 @@ repositories {
             includeGroup("com.eliotlash.mclib")
         }
     }
+    exclusiveContent {
+        forRepository {
+            maven {
+                name = "Modrinth"
+                url = "https://api.modrinth.com/maven"
+            }
+        }
+        forRepositories(fg.repository) // Only add this if you're using ForgeGradle, otherwise remove this line
+        filter {
+            includeGroup "maven.modrinth"
+        }
+    }
 }
 
 dependencies {
-    // Specify the version of Minecraft to use.
-    // Any artifact can be supplied so long as it has a "userdev" classifier artifact and is a compatible patcher artifact.
-    // The "userdev" classifier will be requested and setup by ForgeGradle.
-    // If the group id is "net.minecraft" and the artifact id is one of ["client", "server", "joined"],
-    // then special handling is done to allow a setup of a vanilla dependency without the use of an external repository.
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
     implementation fg.deobf("software.bernie.geckolib:geckolib-forge-${minecraft_version}:${geckolib_version}")
-    implementation("com.eliotlash.mclib:mclib:20")
-    // Example mod dependency with JEI - using fg.deobf() ensures the dependency is remapped to your development mappings
-    // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
-    // compileOnly fg.deobf("mezz.jei:jei-${mc_version}-common-api:${jei_version}")
-    // compileOnly fg.deobf("mezz.jei:jei-${mc_version}-forge-api:${jei_version}")
-    // runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}-forge:${jei_version}")
+    implementation fg.deobf("maven.modrinth:farmers-delight:NcRp00OO")
+    compileOnly fg.deobf("maven.modrinth:overweight-farming:cRR55xmK")
+    compileOnly fg.deobf("curse.maven:savage-and-ravage-381736:6040963")
+    compileOnly fg.deobf("curse.maven:oreganized-769203:6373702")
+    compileOnly fg.deobf("curse.maven:jadens-nether-expansion-1111833:6388893")
+    runtimeOnly fg.deobf("maven.modrinth:create:wYOXyPP5")
 
-    // Example mod dependency using a mod jar from ./libs with a flat dir repository
-    // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar
-    // The group id is ignored when searching -- in this case, it is "blank"
-    // implementation fg.deobf("blank:coolmod-${mc_version}:${coolmod_version}")
+    compileOnly fg.deobf("mezz.jei:jei-${project.minecraft_version}-common-api:${project.jei}")
+    compileOnly fg.deobf("mezz.jei:jei-${project.minecraft_version}-forge-api:${project.jei}")
+    runtimeOnly fg.deobf("mezz.jei:jei-${project.minecraft_version}-forge:${project.jei}")
 
-    // For more info:
-    // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
-    // http://www.gradle.org/docs/current/userguide/dependency_management.html
+    annotationProcessor "org.spongepowered:mixin:0.8.5:processor"
+    implementation fg.deobf("com.teamabnormals:blueprint:${project.minecraft_version}-${project.blueprint}")
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.
