@@ -32,7 +32,6 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.FINAL_EXPLODING_ARROW.get());
                         output.accept(ModItems.WHICH_ARMOR_HELMET.get());
                         output.accept(ModItems.MASTER_KEY.get());
-                        output.accept(ModItems.GRIEFER_SPEAR.get());
                     })
                     .build()
     );
