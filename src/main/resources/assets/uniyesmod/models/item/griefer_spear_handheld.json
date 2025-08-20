@@ -1,6 +1,0 @@
-{
-  "parent": "uniyesmod:item/custom/spear",
-  "textures": {
-    "layer0": "uniyesmod:item/griefer_spear_handheld"
-  }
-}
