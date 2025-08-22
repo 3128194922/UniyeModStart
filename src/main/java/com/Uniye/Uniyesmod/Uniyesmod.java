@@ -1,5 +1,8 @@
 package com.Uniye.Uniyesmod;
 
+import com.Uniye.Uniyesmod.Utils.ModAttributes;
+import com.Uniye.Uniyesmod.Utils.Scheduler;
+import com.Uniye.Uniyesmod.network.NetworkHandler;
 import com.Uniye.Uniyesmod.tabs.ModCreativeModTabs;
 import com.Uniye.Uniyesmod.Item.ModItems;
 import com.Uniye.Uniyesmod.entity.ModEntities;
@@ -21,23 +24,25 @@ import org.slf4j.Logger;
 @Mod(Uniyesmod.MODID)
 public class Uniyesmod
 {
-    // Define mod id in a common place for everything to reference
     public static final String MODID = "uniyesmod";
-    // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
     public Uniyesmod(FMLJavaModLoadingContext context)
     {
         IEventBus modEventBus = context.getModEventBus();
 
-        ModEntities.ENTITIES.register(modEventBus);
+        NetworkHandler.register();
+
         ModCreativeModTabs.register(modEventBus);
         ModItems.register(modEventBus);
-        // Register the commonSetup method for modloading
+        ModEntities.ENTITIES.register(modEventBus);
+        ModAttributes.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::addCreative);
-        // Register ourselves for server and other game events we are interested in
+
         MinecraftForge.EVENT_BUS.register(this);
+        MinecraftForge.EVENT_BUS.register(new Scheduler());
 
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);

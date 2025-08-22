@@ -1,0 +1,29 @@
+package com.Uniye.Uniyesmod.network;
+
+import net.minecraft.resources.ResourceLocation;
+import net.minecraftforge.network.NetworkRegistry;
+import net.minecraftforge.network.simple.SimpleChannel;
+
+public class NetworkHandler {
+    public static final SimpleChannel INSTANCE = NetworkRegistry.newSimpleChannel(
+            new ResourceLocation("uniyesmod", "simple_channel"),
+            () -> "1.0",
+            s -> true,
+            s -> true
+    );
+
+    public static void register() {
+        int id = 0;
+        INSTANCE.registerMessage(id++, DoubleJumpPacket.class,
+                DoubleJumpPacket::encode,
+                DoubleJumpPacket::decode,
+                DoubleJumpPacket::handle
+        );
+
+        INSTANCE.registerMessage(id++, TimeAccelStartPacket.class,
+                TimeAccelStartPacket::encode,
+                TimeAccelStartPacket::decode,
+                TimeAccelStartPacket::handle
+        );
+    }
+}

@@ -62,6 +62,15 @@ public class ModItems {
             "master_key",
             () -> new MasterKeyItem(5, -3.0f,Tiers.NETHERITE, TagInit.MASTERKEY_TAG, new Item.Properties())
     );
+    public static final RegistryObject<Item> MOON = ITEMS.register("moon",
+            () -> new MoonItem(new Item.Properties().stacksTo(1)));
+
+    public static final RegistryObject<Item> GRAVITY_CORE = ITEMS.register("gravity_core",
+            () -> new GravityCoreItem(new Item.Properties().stacksTo(1)));
+
+    public static final RegistryObject<Item> GIANTS_RING = ITEMS.register("giants_ring",
+            () -> new GiantsRingItem(new Item.Properties().stacksTo(1)));
+
     public static void register(IEventBus bus)
     {
         ITEMS.register(bus);

@@ -120,6 +120,10 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
+    maven {
+        name = "Illusive Soulworks maven"
+        url = "https://maven.theillusivec4.top/"
+    }
     maven { url "https://maven.jaackson.me" }
     maven { url "https://maven.teamabnormals.com" }
     maven { url "https://dvs1.progwml6.com/files/maven/" }
@@ -161,8 +165,13 @@ dependencies {
     compileOnly fg.deobf("mezz.jei:jei-${project.minecraft_version}-forge-api:${project.jei}")
     runtimeOnly fg.deobf("mezz.jei:jei-${project.minecraft_version}-forge:${project.jei}")
 
-    annotationProcessor "org.spongepowered:mixin:0.8.5:processor"
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
     implementation fg.deobf("com.teamabnormals:blueprint:${project.minecraft_version}-${project.blueprint}")
+
+    // Compile against only the API artifact
+    compileOnly "top.theillusivec4.curios:curios-forge:${curios_version}:api"
+    // Use the full Curios API jar at runtime
+    runtimeOnly "top.theillusivec4.curios:curios-forge:${curios_version}"
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.
@@ -182,6 +191,14 @@ tasks.named('processResources', ProcessResources).configure {
     filesMatching(['META-INF/mods.toml', 'pack.mcmeta']) {
         expand replaceProperties + [project: project]
     }
+}
+
+mixin {
+    add sourceSets.main, "uniyesmod.refmap.json"
+    config 'uniyesmod.mixins.json'
+
+    debug.verbose = true
+    debug.export = true
 }
 
 // Example for how to get properties into the manifest for reading at runtime.
