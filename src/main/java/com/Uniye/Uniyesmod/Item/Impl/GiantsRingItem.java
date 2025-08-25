@@ -1,6 +1,7 @@
-package com.Uniye.Uniyesmod.Item;
+package com.Uniye.Uniyesmod.Item.Impl;
 
 import com.Uniye.Uniyesmod.Config;
+import com.Uniye.Uniyesmod.Item.ModItems;
 import com.Uniye.Uniyesmod.Uniyesmod;
 import com.Uniye.Uniyesmod.Utils.ModAttributes;
 import com.google.common.collect.HashMultimap;

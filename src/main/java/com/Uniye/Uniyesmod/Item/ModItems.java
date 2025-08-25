@@ -1,5 +1,6 @@
 package com.Uniye.Uniyesmod.Item;
 
+import com.Uniye.Uniyesmod.Item.Impl.*;
 import com.Uniye.Uniyesmod.Uniyesmod;
 import com.Uniye.Uniyesmod.Utils.TagInit;
 import net.minecraft.world.item.ArmorItem;

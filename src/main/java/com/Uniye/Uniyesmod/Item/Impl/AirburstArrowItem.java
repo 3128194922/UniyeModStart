@@ -1,4 +1,4 @@
-package com.Uniye.Uniyesmod.Item;
+package com.Uniye.Uniyesmod.Item.Impl;
 
 import com.Uniye.Uniyesmod.entity.AirburstArrowEntity;
 import com.Uniye.Uniyesmod.entity.ModEntities;

@@ -1,6 +1,6 @@
 package com.Uniye.Uniyesmod.client.render.armor.model;
 
-import com.Uniye.Uniyesmod.Item.WhichArmorItem;
+import com.Uniye.Uniyesmod.Item.Impl.WhichArmorItem;
 import com.Uniye.Uniyesmod.Uniyesmod;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib.model.GeoModel;

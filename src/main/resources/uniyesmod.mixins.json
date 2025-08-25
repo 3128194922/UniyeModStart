@@ -5,9 +5,9 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "uniyesmod.refmap.json",
   "mixins": [
-    "LivingEntityMixin",
     "PlayerMixin",
-    "EntityRendererAccessor"
+    "EntityRendererAccessor",
+    "LivingEntityRendererMixin"
   ],
   "client": [
     "LivingEntityRendererMixin"

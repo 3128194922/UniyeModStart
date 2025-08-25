@@ -1,6 +1,6 @@
 package com.Uniye.Uniyesmod.event;
 
-import com.Uniye.Uniyesmod.Item.GravityCoreItem;
+import com.Uniye.Uniyesmod.Item.Impl.GravityCoreItem;
 import com.Uniye.Uniyesmod.Uniyesmod;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.event.entity.living.LivingFallEvent;

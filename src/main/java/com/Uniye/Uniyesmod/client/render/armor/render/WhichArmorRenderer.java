@@ -1,6 +1,6 @@
 package com.Uniye.Uniyesmod.client.render.armor.render;
 
-import com.Uniye.Uniyesmod.Item.WhichArmorItem;
+import com.Uniye.Uniyesmod.Item.Impl.WhichArmorItem;
 import com.Uniye.Uniyesmod.client.render.armor.model.WhichArmorModel;
 import software.bernie.geckolib.renderer.GeoArmorRenderer;
 

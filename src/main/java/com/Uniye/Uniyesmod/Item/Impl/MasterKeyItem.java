@@ -1,4 +1,4 @@
-package com.Uniye.Uniyesmod.Item;
+package com.Uniye.Uniyesmod.Item.Impl;
 
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;

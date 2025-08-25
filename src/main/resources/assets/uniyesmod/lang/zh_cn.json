@@ -19,5 +19,9 @@
  "item.uniyesmod.master_key": "万能钥匙",
  "item.uniyesmod.moon": "迷你月球",
  "item.uniyesmod.gravity_core": "重力核心",
- "item.uniyesmod.giants_ring": "巨人戒指"
+ "item.uniyesmod.giants_ring": "巨人戒指",
+ "effect.uniyesmod.appetizing": "开胃",
+ "effect.uniyesmod.appetizing.description": "即使饥饿值满也能吃食物",
+ "effect.uniyesmod.lozenge": "润喉",
+ "effect.uniyesmod.lozenge.description": "吃喝速度更快"
 }

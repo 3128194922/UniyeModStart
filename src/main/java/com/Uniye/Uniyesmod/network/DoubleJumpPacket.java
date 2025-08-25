@@ -1,7 +1,7 @@
 package com.Uniye.Uniyesmod.network;
 
 
-import com.Uniye.Uniyesmod.Item.GravityCoreItem;
+import com.Uniye.Uniyesmod.Item.Impl.GravityCoreItem;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraftforge.network.NetworkEvent;

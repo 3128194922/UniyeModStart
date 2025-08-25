@@ -1,4 +1,4 @@
-package com.Uniye.Uniyesmod.Item;
+package com.Uniye.Uniyesmod.Item.Impl;
 
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;

@@ -1,4 +1,4 @@
-package com.Uniye.Uniyesmod.Item;
+package com.Uniye.Uniyesmod.Item.Impl;
 
 
 import com.Uniye.Uniyesmod.client.render.armor.render.WhichArmorRenderer;

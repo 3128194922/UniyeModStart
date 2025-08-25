@@ -1,5 +1,6 @@
-package com.Uniye.Uniyesmod.Item;
+package com.Uniye.Uniyesmod.Item.Impl;
 
+import com.Uniye.Uniyesmod.Item.ModItems;
 import com.Uniye.Uniyesmod.Uniyesmod;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;

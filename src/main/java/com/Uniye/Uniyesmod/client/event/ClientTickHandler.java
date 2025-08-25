@@ -1,6 +1,6 @@
 package com.Uniye.Uniyesmod.client.event;
 
-import com.Uniye.Uniyesmod.Item.GravityCoreItem;
+import com.Uniye.Uniyesmod.Item.Impl.GravityCoreItem;
 import com.Uniye.Uniyesmod.Uniyesmod;
 import com.Uniye.Uniyesmod.network.DoubleJumpPacket;
 import com.Uniye.Uniyesmod.network.NetworkHandler;

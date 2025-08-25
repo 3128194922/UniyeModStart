@@ -2,6 +2,7 @@ package com.Uniye.Uniyesmod;
 
 import com.Uniye.Uniyesmod.Utils.ModAttributes;
 import com.Uniye.Uniyesmod.Utils.Scheduler;
+import com.Uniye.Uniyesmod.effects.ModEffects;
 import com.Uniye.Uniyesmod.network.NetworkHandler;
 import com.Uniye.Uniyesmod.tabs.ModCreativeModTabs;
 import com.Uniye.Uniyesmod.Item.ModItems;
@@ -36,6 +37,7 @@ public class Uniyesmod
         ModCreativeModTabs.register(modEventBus);
         ModItems.register(modEventBus);
         ModEntities.ENTITIES.register(modEventBus);
+        ModEffects.EFFECTS.register(modEventBus);
         ModAttributes.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
