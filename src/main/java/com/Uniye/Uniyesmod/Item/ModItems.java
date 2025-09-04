@@ -72,6 +72,9 @@ public class ModItems {
     public static final RegistryObject<Item> GIANTS_RING = ITEMS.register("giants_ring",
             () -> new GiantsRingItem(new Item.Properties().stacksTo(1)));
 
+    public static final RegistryObject<Item> MOAI_CHARM = ITEMS.register("moai_charm",
+            () -> new MoaiCharm(new Item.Properties().stacksTo(1)));
+
     public static void register(IEventBus bus)
     {
         ITEMS.register(bus);

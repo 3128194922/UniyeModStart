@@ -35,6 +35,7 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.MOON.get());
                         output.accept(ModItems.GRAVITY_CORE.get());
                         output.accept(ModItems.GIANTS_RING.get());
+                        output.accept(ModItems.MOAI_CHARM.get());
                     })
                     .build()
     );
