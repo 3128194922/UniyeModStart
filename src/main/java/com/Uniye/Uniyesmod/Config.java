@@ -80,6 +80,28 @@ public class Config
             .comment("Maximum dodge chance.\n" +
                     "Example: 0.9 = 90% maximum dodge chance.")
             .defineInRange("ringOfAgilityMaxDodgeChance", 0.9, 0.0, 1.0);
+    private static final ForgeConfigSpec.IntValue AIRBURST_NUMBER = BUILDER
+            .comment("空爆1阶段出现的子弹数量\n")
+            .defineInRange("AirBurstNumber", 12, 1, 255);
+    private static final ForgeConfigSpec.IntValue AIRBURST_NUMBER_RANDOM = BUILDER
+            .comment("空爆1阶段出现的子弹数量随机范围,将生成 子弹数量+随机范围 个子弹\n")
+            .defineInRange("AirBurstNumberRandom", 8, 1, 255);
+    private static final ForgeConfigSpec.IntValue AIRBURST_NUMBER_2 = BUILDER
+            .comment("空爆2阶段出现的子弹数量\n")
+            .defineInRange("AirBurstNumber2", 3, 1, 255);
+    private static final ForgeConfigSpec.IntValue AIRBURST_NUMBER_2_RANDOM = BUILDER
+            .comment("空爆2阶段出现的子弹数量随机范围,将生成 子弹数量+随机范围 个子弹\n")
+            .defineInRange("AirBurstNumber2Random", 3, 1, 255);
+    private static final ForgeConfigSpec.IntValue TNT_ARROW_BOUNCES = BUILDER
+            .comment("tnt箭弹跳次数\n")
+            .defineInRange("TNTArrowBounces", 4, 1, 255);
+    private static final ForgeConfigSpec.ConfigValue<Double> TNT_ARROW_DAMAGE = BUILDER
+            .comment("tnt箭直击伤害\n")
+            .defineInRange("TNTArrowDamage", 1.0, 0.0, 255.0);
+    private static final ForgeConfigSpec.ConfigValue<Double> TNT_ARROW_MIN_VELOCITY = BUILDER
+            .comment("tnt箭无法弹跳的速度\n")
+            .defineInRange("TNTArrowMinVelocity", 0.5, 0.0, 255.0);
+
     static final ForgeConfigSpec SPEC = BUILDER.build();
 
     public static double GravityCoreGravityMultiplier;
@@ -95,6 +117,13 @@ public class Config
     public static int DivineShieldImmunityTicks;
     public static double RingOfAgilityChanceScale;
     public static double RingOfAgilityMaxDodgeChance;
+    public static int AirBurstNumber;
+    public static int AirBurstNumberRandom;
+    public static int AirBurstNumber2;
+    public static int AirBurstNumber2Random;
+    public static int TNTArrowBounces;
+    public static double TNTArrowDamage;
+    public static double TNTArrowMinVelocity;
 
     @SubscribeEvent
     static void onLoad(final ModConfigEvent event)
@@ -112,5 +141,12 @@ public class Config
         DivineShieldImmunityTicks = DIVINE_SHIELD_IMMUNITY_TICKS.get();
         RingOfAgilityChanceScale = RING_OF_AGILITY_CHANCE_SCALE.get();
         RingOfAgilityMaxDodgeChance = RING_OF_AGILITY_MAX_DODGE_CHANCE.get();
+        AirBurstNumber = AIRBURST_NUMBER.get();
+        AirBurstNumberRandom = AIRBURST_NUMBER_RANDOM.get();
+        AirBurstNumber2 = AIRBURST_NUMBER_2.get();
+        AirBurstNumber2Random = AIRBURST_NUMBER_2_RANDOM.get();
+        TNTArrowBounces = TNT_ARROW_BOUNCES.get();
+        TNTArrowDamage = TNT_ARROW_DAMAGE.get();
+        TNTArrowMinVelocity = TNT_ARROW_MIN_VELOCITY.get();
     }
 }

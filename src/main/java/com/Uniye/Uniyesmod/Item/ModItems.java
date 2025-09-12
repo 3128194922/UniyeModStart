@@ -59,6 +59,12 @@ public class ModItems {
             "which_armor_helmet",
             () -> new WhichArmorItem(ModArmorMaterials.WHICH, ArmorItem.Type.HELMET, new Item.Properties())
     );
+
+    public static final RegistryObject<Item> FISHING_HAT = ITEMS.register(
+            "fishing_hat",
+            () -> new FishingHatArmorItem(ModArmorMaterials.FISHINGHAT, ArmorItem.Type.HELMET, new Item.Properties())
+    );
+
     public static final RegistryObject<Item> MASTER_KEY = ITEMS.register(
             "master_key",
             () -> new MasterKeyItem(5, -3.0f,Tiers.NETHERITE, TagInit.MASTERKEY_TAG, new Item.Properties())

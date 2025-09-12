@@ -1,5 +1,6 @@
 package com.Uniye.Uniyesmod.entity;
 
+import com.Uniye.Uniyesmod.Config;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
@@ -42,7 +43,7 @@ public class ExplodingArrowEntity extends AbstractArrow {
         // 原版爆炸（不破坏方块、不点燃）
         serverLevel.explode(null, this.getX(), this.getY(), this.getZ(), 2.0f, Level.ExplosionInteraction.NONE);
 
-        int count = 3 + this.random.nextInt(3); // 6~10 个小箭
+        int count = Config.AirBurstNumber2 + this.random.nextInt(Config.AirBurstNumber2Random); // 6~10 个小箭
         Entity ownerEntity = this.getOwner();
         LivingEntity owner = null;
         if (ownerEntity instanceof LivingEntity living) owner = living;

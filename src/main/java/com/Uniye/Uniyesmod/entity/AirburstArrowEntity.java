@@ -1,5 +1,6 @@
 package com.Uniye.Uniyesmod.entity;
 
+import com.Uniye.Uniyesmod.Config;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
@@ -97,7 +98,7 @@ private void explode() {
 
     ServerLevel serverLevel = (ServerLevel) this.level();
 
-    int count = 12 + this.random.nextInt(8); // 8~16 个子箭
+    int count = Config.AirBurstNumber + this.random.nextInt(Config.AirBurstNumberRandom); // 8~16 个子箭
 
     Entity ownerEntity = this.getOwner();
     LivingEntity owner = null;

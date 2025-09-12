@@ -1,5 +1,6 @@
 package com.Uniye.Uniyesmod.entity;
 
+import com.Uniye.Uniyesmod.Config;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
@@ -19,9 +20,9 @@ import net.minecraftforge.network.NetworkHooks;
 public class SlimeArrow extends AbstractArrow {
 
     public static float MAX_VELOCITY = 3.0F;
-    public static float MIN_VELOCITY = 0.5F;
-    public static float DAMAGE = 1.0F;
-    public static int BOUNCES = 4;
+    public static double MIN_VELOCITY = Config.TNTArrowMinVelocity;
+    public static double DAMAGE = Config.TNTArrowDamage;
+    public static int BOUNCES = Config.TNTArrowBounces;
 
     private int curBounces = 0;
 
