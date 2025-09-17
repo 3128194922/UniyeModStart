@@ -1,0 +1,6 @@
+{
+    "parent": "item/multi_shot_crossbow",
+    "textures": {
+        "layer0": "uniyesmod:item/multi_shot_crossbow_firework"
+    }
+}

@@ -81,6 +81,12 @@ public class ModItems {
     public static final RegistryObject<Item> MOAI_CHARM = ITEMS.register("moai_charm",
             () -> new MoaiCharm(new Item.Properties().stacksTo(1)));
 
+    public static final RegistryObject<Item> BURST_BOW = ITEMS.register("burst_bow",
+            () -> new BurstBowItem(new Item.Properties().stacksTo(1)));
+
+    public static final RegistryObject<Item> MULTI_SHOT_CROSSBOW = ITEMS.register("multi_shot_crossbow",
+            () -> new MultiShotCrossbowItem(new Item.Properties().stacksTo(1)));
+
     public static void register(IEventBus bus)
     {
         ITEMS.register(bus);
