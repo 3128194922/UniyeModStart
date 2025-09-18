@@ -2,6 +2,8 @@ package com.Uniye.Uniyesmod.Item.Impl;
 
 import com.Uniye.Uniyesmod.event.DelayedArrowScheduler;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
@@ -13,6 +15,20 @@ public class BurstBowItem extends BowItem {
         super(properties);
     }
 
+    /** 阻止玩家箭不够时进入拉弓动画 */
+    @Override
+    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+        ItemStack stack = player.getItemInHand(hand);
+
+        boolean isCreative = player.getAbilities().instabuild;
+        if (!isCreative && countArrows(player) < 3) {
+            return InteractionResultHolder.fail(stack); // 不够箭，不拉弓
+        }
+
+        player.startUsingItem(hand);
+        return InteractionResultHolder.consume(stack);
+    }
+
     @Override
     public void releaseUsing(ItemStack stack, Level level, LivingEntity shooter, int timeLeft) {
         if (!(shooter instanceof Player player)) return;
@@ -22,10 +38,8 @@ public class BurstBowItem extends BowItem {
         float power = getPowerForTime(useDuration);
         if (power < 0.1F) return; // 拉弓不足
 
-        // 创造模式不消耗箭
         boolean isCreative = player.getAbilities().instabuild;
 
-        // 生存模式检查库存是否至少有3支箭
         if (!isCreative && countArrows(player) < 3) return;
 
         // 三连发：间隔 4 tick
@@ -34,14 +48,12 @@ public class BurstBowItem extends BowItem {
             DelayedArrowScheduler.schedule((ServerLevel) level, shooter, stack.copy(), power, delay);
         }
 
-        // 消耗箭：每发消耗一支，总共 3 支（创造模式不消耗）
         if (!isCreative) {
             for (int i = 0; i < 3; i++) {
                 consumeArrow(player);
             }
         }
 
-        // 耐久损耗
         stack.hurtAndBreak(1, shooter, p -> p.broadcastBreakEvent(shooter.getUsedItemHand()));
     }
 

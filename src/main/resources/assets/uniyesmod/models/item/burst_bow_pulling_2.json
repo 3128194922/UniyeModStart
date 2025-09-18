@@ -1,5 +1,5 @@
 {
-    "parent": "item/bow",
+    "parent": "uniyesmod:item/burst_bow",
     "textures": {
         "layer0": "uniyesmod:item/burst_bow_pulling_2"
     }
