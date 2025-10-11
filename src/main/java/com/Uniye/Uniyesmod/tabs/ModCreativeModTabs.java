@@ -26,7 +26,7 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.DEMOCRACY_CHESTPLATE.get());
                         output.accept(ModItems.DEMOCRACY_LEGGINGS.get());
                         output.accept(ModItems.SLIME_ARROW.get());
-                        output.accept(ModItems.SEEKING_ARROW.get());
+                        output.accept(ModItems.NETHEROFVOICE.get());
                         output.accept(ModItems.AIRBURST_ARROW.get());
                         output.accept(ModItems.EXPLODING_ARROW.get());
                         output.accept(ModItems.FINAL_EXPLODING_ARROW.get());

@@ -39,9 +39,9 @@ public class ModItems {
             "democracy_boots",
             () -> new ArmorItem(ModArmorMaterials.DEMOCRACY, ArmorItem.Type.BOOTS, new Item.Properties())
     );
-    public static final RegistryObject<Item> SEEKING_ARROW = ITEMS.register(
-            "seeking_arrow",
-            () -> new SeekingArrowItem(new Item.Properties())
+    public static final RegistryObject<Item> NETHEROFVOICE = ITEMS.register(
+            "nether_of_voice",
+            () -> new NrtherOfVoiceItem(new Item.Properties())
     );
     public static final RegistryObject<Item> AIRBURST_ARROW = ITEMS.register(
             "airburst_arrow",

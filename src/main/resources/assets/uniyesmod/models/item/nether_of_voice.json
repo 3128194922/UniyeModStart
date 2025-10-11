@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "uniyesmod:item/seeking_arrow"
+    "layer0": "uniyesmod:item/nether_of_voice"
   }
 }
