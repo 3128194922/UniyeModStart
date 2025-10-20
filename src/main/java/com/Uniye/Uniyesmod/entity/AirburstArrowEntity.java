@@ -41,18 +41,28 @@ public class AirburstArrowEntity extends AbstractArrow {
 
     @Override
     public void tick() {
-        super.tick();
-
-        tickCount++;
-
-        // 如果发射者坐标还没记录（例如从 NBT 恢复），记录一次
-        if (shooterPos == null && this.getOwner() != null) {
-            shooterPos = this.getOwner().position();
+        // Ensure we don't process ticks if the entity is invalid
+        if (!this.isAlive() || this.level() == null) {
+            return;
         }
-
-        // 检查是否满足空爆条件
-        if (tickCount >= 60 || (shooterPos != null && this.position().distanceToSqr(shooterPos) > 400)) {
-            explode();
+        
+        try {
+            super.tick();
+            
+            tickCount++;
+            
+            // 如果发射者坐标还没记录（例如从 NBT 恢复），记录一次
+            if (shooterPos == null && this.getOwner() != null) {
+                shooterPos = this.getOwner().position();
+            }
+            
+            // 检查是否满足空爆条件
+            if (tickCount >= 60 || (shooterPos != null && this.position().distanceToSqr(shooterPos) > 400)) {
+                explode();
+            }
+        } catch (Exception e) {
+            // If any error occurs during tick, safely remove the entity
+            this.discard();
         }
     }
 /*
@@ -117,7 +127,15 @@ private void explode() {
 
         Vec3 finalVec = new Vec3(dx, dy, dz).scale(1.5); // 速度向量，长度1.5
 
-        ExplodingArrowEntity childArrow = new ExplodingArrowEntity(ModEntities.EXPLODING_ARROW.get(), serverLevel, owner);
+        // Create the child arrow with proper null check for owner
+        ExplodingArrowEntity childArrow;
+        if (owner != null) {
+            childArrow = new ExplodingArrowEntity(ModEntities.EXPLODING_ARROW.get(), serverLevel, owner);
+        } else {
+            // If no owner, use the type and level constructor instead
+            childArrow = new ExplodingArrowEntity(ModEntities.EXPLODING_ARROW.get(), serverLevel);
+        }
+        
         childArrow.setPos(this.getX(), this.getY(), this.getZ());
         childArrow.setDeltaMovement(finalVec);
         serverLevel.addFreshEntity(childArrow);

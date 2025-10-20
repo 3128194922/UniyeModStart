@@ -56,7 +56,12 @@ public class ExplodingArrowEntity extends AbstractArrow {
 
             Vec3 randomDir = new Vec3(dx, dy, dz);
 
-            FinalExplodingArrowEntity smallArrow = new FinalExplodingArrowEntity(ModEntities.FINAL_EXPLODING_ARROW.get(), serverLevel, owner);
+            FinalExplodingArrowEntity smallArrow;
+            if (owner != null) {
+                smallArrow = new FinalExplodingArrowEntity(ModEntities.FINAL_EXPLODING_ARROW.get(), serverLevel, owner);
+            } else {
+                smallArrow = new FinalExplodingArrowEntity(ModEntities.FINAL_EXPLODING_ARROW.get(), serverLevel);
+            }
             smallArrow.setPos(this.getX(), this.getY(), this.getZ());
             smallArrow.setDeltaMovement(randomDir);
 
